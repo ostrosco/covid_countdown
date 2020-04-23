@@ -15,3 +15,12 @@ pub fn find_state(
 
     Ok(state)
 }
+
+pub fn get_state_names(
+    conn: &SqliteConnection,
+) -> Result<Vec<String>, diesel::result::Error> {
+    use crate::schema::states::dsl::*;
+
+    let state_names = states.select(state_name).load::<String>(conn)?;
+    Ok(state_names)
+}
