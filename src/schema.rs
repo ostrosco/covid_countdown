@@ -2,6 +2,7 @@ table! {
     states (id) {
         id -> Integer,
         state_name -> Text,
-        stay_at_home_end -> Timestamp,
+        has_end_date -> Bool,
+        end_date -> Nullable<Timestamp>,
     }
 }

@@ -5,5 +5,6 @@ use serde::{Deserialize, Serialize};
 pub struct State {
     id: i32,
     state_name: String,
-    stay_at_home_end: NaiveDateTime,
+    has_end_date: bool,
+    end_date: Option<NaiveDateTime>,
 }
